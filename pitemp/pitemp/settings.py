@@ -37,11 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'debug_toolbar',
-    'website.apps.WebsiteConfig',
-    'api.apps.ApiConfig',
-    'authenticate.apps.AuthenticateConfig',
+    'users.apps.UsersConfig'   # For custom user (1/2)
+    'debug_toolbar',   # debug
+    'website.apps.WebsiteConfig',   # application website
+    'api.apps.ApiConfig',   # application api
+    'authenticate.apps.AuthenticateConfig',   # application authenticate
 ]
+
+AUTH_USER_MODEL = 'users.CustomUser'   # For custom user (2/2)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
