@@ -15,4 +15,4 @@ class CustomUser(AbstractUser):
 class Temperature(models.Model):
     temperature = models.FloatField(null=False)
     date = models.DateTimeField(auto_now_add=True)
-    idUser = models.ForeignKey(User, on_delete=models.CASCADE)
+    # idUser = models.ForeignKey(User, on_delete=models.CASCADE)
