@@ -1,8 +1,9 @@
-{% extends 'index.html' %}
+{% extends 'website/index.html' %}
 
 {% block title %}Login{% endblock %}
 
-{% block content %}
+{% load static %}
+{% block authenticate %}
 <h2>Login</h2>
 <form method="post">
   {% csrf_token %}
