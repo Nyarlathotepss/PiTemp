@@ -25,7 +25,7 @@ SECRET_KEY = 'm(1uux62c4=47-_u0%2qtf81q#d(sml*o&s#9#@%igvy($50hs'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1"]
 
 # Application definition
 
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'website.apps.WebsiteConfig',   # application website
     'api.apps.ApiConfig',   # application api
     'authenticate.apps.AuthenticateConfig',   # application authenticate
+    'rest_framework',   # app needed by application api
 ]
 
 
@@ -106,6 +107,11 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
+}
 
 AUTH_USER_MODEL = 'website.CustomUser'   # For custom user
 
