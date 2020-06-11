@@ -10,4 +10,10 @@
   {{ form.as_p }}
   <button type="submit">Login</button>
 </form>
+
+<div class="row">
+  <div id="no-account">
+    <p> You do not have an account ?<a title="Click here" href="{% url 'signup' %}"> Click here </a></p>
+  </div>
+</div>
 {% endblock %}

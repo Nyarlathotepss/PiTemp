@@ -21,7 +21,8 @@ from website import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', views.home, name="home"),
-    path('authenticate/', include('django.contrib.auth.urls')),
-    path('authenticate/', include('authenticate.urls')),
-    path('api/', include('api.urls')),   # api url
+    path('authenticate/', include('django.contrib.auth.urls')),   # django authentication urls
+    path('authenticate/', include('authenticate.urls')),   # authenticate app urls
+    path('api/', include('api.urls')),   # api app urls
+    path('website/', include('website.urls')),   # website app urls
 ]
