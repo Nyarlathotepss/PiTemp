@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'api.apps.ApiConfig',   # application api
     'authenticate.apps.AuthenticateConfig',   # application authenticate
     'rest_framework',   # app needed by application api
+    'rest_framework.authtoken',   # app needed by authentication application api (1/2)
 ]
 
 
@@ -110,7 +111,10 @@ AUTH_PASSWORD_VALIDATORS = [
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10
+    'PAGE_SIZE': 10,
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',  # app needed by authentication application api (2/2)
+    ],
 }
 
 AUTH_USER_MODEL = 'website.CustomUser'   # For custom user
