@@ -1,5 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django.conf import settings
 
 
 class CustomUser(AbstractUser):
@@ -15,4 +16,7 @@ class CustomUser(AbstractUser):
 class Temperature(models.Model):
     temperature = models.FloatField(null=False)
     date = models.DateTimeField(auto_now_add=True)
-    idUser = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    idUser = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.temperature, self.date
