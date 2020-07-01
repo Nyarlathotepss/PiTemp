@@ -7,10 +7,14 @@ from rest_framework.permissions import IsAuthenticated   # <-- authentication ap
 
 class TemperatureViewSet(viewsets.ModelViewSet):
 
+    authentication_classes = [TokenAuthentication]   # <-- authentication api (3/4)
+    permission_classes = [IsAuthenticated]   # <-- authentication api (4/4)
+
     """
-    API endpoint that allows users to be viewed or edited.
+    API endpoint that allows temperature to be viewed or edited.
     """
     queryset = Temperature.objects.all().order_by('date')
     serializer_class = TemperatureSerializer
-    authentication_classes = (TokenAuthentication,)   # <-- authentication api (3/4)
-    permission_classes = (IsAuthenticated,)   # <-- authentication api (4/4)
+
+    def perform_create(self, serializer):    # insert idUser in POST request
+        serializer.save(idUser=self.request.user)
