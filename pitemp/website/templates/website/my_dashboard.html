@@ -1,9 +1,23 @@
-{% extends "website/index.html" %}
+{% extends 'website/index.html' %}
 {% load static %}
 
-<!-- Content Section-->
+{% block title %}Mon tableau de bord{% endblock %}
+
 {% block content %}
-<div>
-    <p>test</p>
+<h2>Mon tableau de bord</h2>
+<div class=container>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+            <canvas id="myChart" style="display: block; width: 1012px; height: 506px;" width="1012" height="506" class="chartjs-render-monitor"></canvas>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
+            <script>
+                var data = {{ my_temperatures|safe }}
+            </script>
+            <script type="text/javascript" src="{% static 'website/javascript/my_chart' %}"></script>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+            <h2> Moyenne des températures des 4 dernières heures :</h2>
+        </div>
+    </div>
 </div>
-{% endblock content %}
+{% endblock %}
