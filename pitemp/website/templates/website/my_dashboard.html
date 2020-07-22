@@ -8,6 +8,7 @@
 <div class=container>
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+            <h3>{{msg}}</h3>
             <canvas id="myChart" style="display: block; width: 1012px; height: 506px;" width="1012" height="506" class="chartjs-render-monitor"></canvas>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
             <script>
@@ -16,7 +17,11 @@
             <script type="text/javascript" src="{% static 'website/javascript/my_chart' %}"></script>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-            <h2> Moyenne des températures des 4 dernières heures :</h2>
+            <br>
+            <h3> Moyenne des températures des 4 dernières heures : {{ data.moyenne }}</h3>
+            <br>
+            <br>
+            <h3> La dernière remontée d'information remonte à : {{ data.last_update }}</h3>
         </div>
     </div>
 </div>
