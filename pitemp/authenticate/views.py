@@ -9,7 +9,6 @@ def my_account(request):
     id = str(request.user.id)
     token = Token.objects.filter(user_id=id)
     token = token[0]
-    print(token)
     context = {
                 'my_token': token,
                 }

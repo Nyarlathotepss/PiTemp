@@ -28,6 +28,7 @@ class Temperature(models.Model):
     temperature = models.FloatField(null=False)
     date = models.DateTimeField(auto_now_add=True)
     idUser = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    objects = models.Manager()
 
     def __str__(self):
         return self.temperature, self.date

@@ -86,7 +86,10 @@ DATABASES = {
         'USER': 'pitemp_admin',
         'PASSWORD': 'python123',
         'HOST': 'localhost',
-        'PORT': '5432'
+        'PORT': '5432',
+        'TEST': {
+            'NAME': 'mytestdatabase',
+        },
     }
 }
 

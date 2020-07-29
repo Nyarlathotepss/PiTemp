@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 from .models import Temperature
 import json
 
@@ -16,13 +17,14 @@ def my_dashboard(request):
     print(temperatures.values())
     my_temperatures = []
     message_to_display = str()
+
     if temperatures.first():
         for i in temperatures:
-            print(i.temperature, i.date)
+            print(i.temperature, i.date, type(i.date))
             date = str(i.date)
             date = date[11:13]+'h'
-            print(date)
-            my_temperatures.append({'x': date, 'y': i.temperature},)
+            print(date, type(date))
+            my_temperatures.append({'x': date, 'y': i.temperature})
     else:
         message_to_display = 'Pas d''informations à afficher'
 

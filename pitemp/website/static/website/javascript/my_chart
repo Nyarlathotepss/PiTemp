@@ -3,7 +3,7 @@ console.log("test display :", data[0]['x']);
 var myChart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels: [data[0]['x'],data[1]['x'],data[2]['x'],data[3]['x']],
+        labels: [data[0]['x'],data[1]['x'],data[2]['x'],data[3]['x'],data[4]['x'],],
         datasets: [{
             label: 'degres.',
             backgroundColor: "#F5DEB3",
