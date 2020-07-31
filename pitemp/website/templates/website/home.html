@@ -24,19 +24,22 @@
         <section class="page-section" id="content">
             {% block content %}
                 <div class="container">
-                    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Introduction</h2>
-                    <div class="row">
-                    </div>
+                    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-5">Introduction</h2>
+
+                        <p id="intro">Bienvenue sur le projet PiTemp.<br>
+                            <br>
+                            Les offres domotiques ne cessent de croitrent depuis plusieurs années.<br>
+                            Avec l'explosion des objets connectés il devient évident aujourd'hui pour le particulier de pouvoir "piloter" sa maison a distance.
+                            De nombreuses entreprises proposent, aujourd'hui, des formules clé en main pour de la domotique d'une maison de particulier.<br>
+                            <br>
+                            Cela met en perspective 2 problèmes :<br>
+                            1/ Vous êtes en général obligé d'acheter seuleument les produits du dit constructeur.<br>
+                            2/ Les mises à jour du framework sont dépendantes du contructeur.<br>
+                            L'objectif du projet c'est de pouvoir fournir une interface opensource aux personnes désirant, dans un premier temps, afficher la
+                            température à un instant T d'une pièce de leur maison.<br>
+                            Pour mettre en place la solution proposée vous aures besoin d'un Raspberry Pi ainsi que d'une sonde de temperature de prégérence
+                            de type Dallas DS18B20.
+                        </p>
                 </div>
             {% endblock content %}
-        </section>
-
-        <!-- Contact Section-->
-        <section class="page-section" id="contact">
-            {% block contact %}
-                <div class="container">
-                    <!-- Contact Section Heading-->
-                    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Me</h2>
-                </div>
-            {% endblock contact %}
         </section>

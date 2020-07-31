@@ -4,15 +4,14 @@
 
 {% load static %}
 {% block authenticate %}
-<h2>Login</h2>
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit" id="button_login">Login</button>
-</form>
-
-<div class="row">
-  <div id="no-account">
+<div class="container text-center">
+  <h2>Login</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" id="button_login">Login</button>
+  </form>
+  <div class="mt-5">
     <p> You do not have an account ?<a title="Click here" href="{% url 'signup' %}"> Click here </a></p>
   </div>
 </div>
